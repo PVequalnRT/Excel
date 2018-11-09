@@ -1,4 +1,5 @@
 Attribute VB_Name = "Module1"
+
 Function Status(num)
 
 '특정년도에서 현재 년도를 제하여 건물상태를 상, 중, 하로 나눠서 분류하는 함수
@@ -62,3 +63,35 @@ Sub color()
     Loop
 
 End Sub
+
+Sub Color2()   '건물의 년도를 구하고, 년도에 따라 상 중 하로 나누고, 상은 노랑, 중은 하양, 하는 초록으로 채색하는 프로그램
+
+Dim cha As String
+dim x As Byte
+x = 2
+
+Do While x > 1
+    if ActiveCell.Offset(0,-1).Value = "" Then
+     MsgBox "채색이 완료되었습니다."
+     Exit sub
+    End If
+
+    cha = Status(ActiveCell.Offset(0,-1).Value)
+
+    If cha = "하" Then
+     ActiveCell.Offset(0,0).Interior.color = RGB(0,255,0)
+     ActiveCell.Offset(0,0).Value = cha
+
+   ElseIf cha = "중" Then
+     ActiveCell.Offset(0,0).Value = cha
+
+    ElseIf cha "상" Then
+     ActiveCell.Offset(0,0).Interior.color = RGB(255,255,0)
+     ActiveCell.Offset(0,0).Value = cha
+  
+    End If
+
+ActiveCell.Offset(0,0).Select
+
+Loop
+End sub
