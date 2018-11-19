@@ -81,14 +81,17 @@ Do While x > 1
     If cha = "ÇÏ" Then
      ActiveCell.Offset(0,0).Interior.color = RGB(0,255,0)
      ActiveCell.Offset(0,0).Value = cha
+     Selection.Font.Bold = True
 
    ElseIf cha = "Áß" Then
      ActiveCell.Offset(0,0).Value = cha
+     Selection.Font.Bold = True
 
     ElseIf cha "»ó" Then
      ActiveCell.Offset(0,0).Interior.color = RGB(255,255,0)
      ActiveCell.Offset(0,0).Value = cha
-  
+     Selection.Font.Bold = True
+
     End If
 
 ActiveCell.Offset(0,0).Select
