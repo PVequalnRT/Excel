@@ -33,13 +33,13 @@ Dim val As Byte
 val = 2018 - num
 
 If val > 15 Then
-    Status = "하"
+    BuilingStatus = "하"
 
 ElseIf val > 5 Then
-    Status = "중"
+    BuilingStatus = "중"
 
 Else
-    Status = "상"
+    BuilingStatus = "상"
 End If
     
 End Function
@@ -131,7 +131,7 @@ Loop
 End Sub
 
 
-Function BuilingStatus2(num) '왜 안되는것이야요
+Function BuilingStatus2(num)
 '특정년도에서 현재 년도를 제하여 건물상태를 상, 중, 하로 나눠서 분류하는 함수
 
 Dim val
@@ -140,15 +140,15 @@ val = 2018 - num
 
 If val > 15 Then
     ActiveCell.Interior.color = RGB(0, 255, 0)
-    Status2 = "하"
+    BuilingStatus2 = "하"
     
 
 ElseIf val > 5 Then
-    Status2 = "중"
+    BuilingStatus2 = "중"
 
 Else
     ActiveCell.Interior.color = RGB(255, 255, 0)
-    Status2 = "상"
+    BuilingStatus2 = "상"
     
     
 End If
@@ -169,7 +169,7 @@ Do While x > 1
      Exit Sub
     End If
     
-    cha = Status(ActiveCell.Offset(0, -1).Value)
+    cha = BuilingStatus(ActiveCell.Offset(0, -1).Value)
 
     If cha = "하" Then
      ActiveCell.Offset(0, 0).Interior.color = RGB(0, 255, 0)
