@@ -1,0 +1,14 @@
+Sub StringSum()
+
+dim s(3) As String
+dim n As Long
+
+For i = 2 to 4
+
+	s(i - 1) = ActiveCell.Offset(0, i * -1).value	
+
+Next
+
+ActiveCell.value = s(3)&s(2)&s(1)
+
+End Sub

@@ -1,0 +1,22 @@
+Sub StringSum()
+
+dim s1,s2,s3 As String
+dim n As Long
+
+For i = 2 to 4
+	
+	n = i * -1
+
+	If i = 2 then
+		s1 = ActiveCell.Offset(0,n).value
+	Elseif i = 3 then
+		s2 = ActiveCell.Offset(0,n).value
+	Else
+		s3 = ActiveCell.Offset(0,n).value
+	End If
+
+Next
+
+ActiveCell.value = s3&s2&s1
+
+End Sub

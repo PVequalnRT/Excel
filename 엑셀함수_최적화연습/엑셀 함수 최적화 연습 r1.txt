@@ -1,0 +1,11 @@
+Sub StringSum()
+
+dim s1,s2,s3 As String
+
+s1 = ActiveCell.Offset(0,-2).value
+s2 = ActiveCell.Offset(0.-3).value
+s3 = ActiveCell.Offset(0,-4).value
+
+ActiveCell.value = s3&s2&s1
+
+End Sub
